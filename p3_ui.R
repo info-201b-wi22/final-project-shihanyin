@@ -39,7 +39,8 @@ plot_2 <- tabPanel(
         selected = 1),
       ),
     mainPanel(
-      plotlyOutput("Plot2" )
+      plotlyOutput("Plot2", width= "65%", height = "650px"),
+      p("This chart displays the number of incidents per Crime Type. Switch between categories to see the distribution from 2019-2020.")
     )
 )
 
