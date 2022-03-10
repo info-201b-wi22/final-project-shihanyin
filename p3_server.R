@@ -26,21 +26,21 @@ server <- function(input, output) {
     return(plotly_Plot1)
   })
   
-  output$Plot2 <- renderPrint({ input$radio 
+  output$Plot2 <- renderPlotly({ input$radio 
     if (input$plot_type == "Personal Crime") {
       ggplot(personal_crime) + 
         geom_col(aes(x=year, y=Incidents, fill = Offense)) +
         scale_fill_brewer(palette = 3)
     } else if (input$plot_type == "Property Crime") {
       ggplot(property_crime) +
-        geom_col(aes(x=year, y=Incidents, fill = Offense)) +
-        scale_fill_brewer(palette = 3)
+        geom_col(aes(x=year, y=Incidents, fill = Offense))
     }
     else if (input$plot_type == "Society Crime") {
       ggplot(society_crime) +
         geom_col(aes(x=year, y=Incidents, fill = Offense)) +
-        scale_fill_brewer(palette = 3)
+        scale_fill_brewer(palette = 2)
     }
+    return(plotly_Plot2)
   })
 }
 

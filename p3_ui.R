@@ -25,6 +25,7 @@ plot_sidebar2 <- sidebarPanel(
   
 plot_main <- mainPanel(
   plotlyOutput(outputId = "Plot1" ),
+  plotlyOutput(outputId = "Plot2" ),
   p("By looking at this chart, we can get a glance about trend of covid cases among counties.")
 )
   

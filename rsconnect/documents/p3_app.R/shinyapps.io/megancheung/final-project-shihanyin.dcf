@@ -1,0 +1,14 @@
+name: final-project-shihanyin
+title: final-project-shihanyin
+username:
+account: megancheung
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5821522
+bundleId: 5664942
+url: https://megancheung.shinyapps.io/final-project-shihanyin/
+when: 1646890880.99203
+lastSyncTime: 1646890880.99204
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: criminal_data_type.csv|README.md
