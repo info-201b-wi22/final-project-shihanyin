@@ -11,7 +11,19 @@ Link: Link to your Shiny App here
 
 # Introduction
 
+#### Major Questions
+Since the outbreak of Covid-19, the coronavirus pandemic seems to have brought nothing but disaster, and crime has always been a hot topic. We would like to see if there is a potential correlation between these two topics. Consequently, the major question we are seeking to answer is to figure out whether there is a correlation between incresed covid cases and the crime numbers as well as any changes in crime types.
+#### Dataset
+Here are the links to the data set we have used for our project:
 
+- 1. https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv
+- 2. https://kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx
+
+By looking and comparing these data set, we are able to seek out the trend of covid cases, the change of crime numbers on crime types, and the crime condition we looking specifically into King county, since it is the county with the highest covid cases as well as highest crime numbers due to its high population
+##### Source
+The first data set is from our previous class, when we were introduced to the covid data. The second data set is from King County's website.
+##### Limitations & Ethical problems
+There are many additional factors that need to be considered when looking at the correlation between covid and crimes. Just because patterns and trends can be seen within the datasets does not necessarily mean a direct correlation or hypothesis can be drawn from it. This is a general disclaimer about our project that needs to be addressed, any visualization we produce that displays the relationship between covid and crimes should not be seen as causations of one another whether positive or negative. There are challenges that come with dealing with such two big datasets, one of them is not being able to include every possible factor that could affect these data points. These challenges limit our project for any distinct conclusion to be drawn, however, this project can still be used to get the big idea of what is going on in our world and make educated inferences about society.
 
 # Conclusion
 ## Takeaways
