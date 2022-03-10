@@ -7,7 +7,7 @@ Shihan Yin - shihay3@uw.edu
 Coralie Huang - rhuang28@uw.edu
 Yuxuan Yao - yyao8@uw.edu
 
-Link: Link to your Shiny App here
+Link: https://yinshihan.shinyapps.io/final-project-shihanyin/
 
 # Introduction
 
