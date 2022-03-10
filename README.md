@@ -15,9 +15,8 @@ Link: Link to your Shiny App here
 
 # Conclusion
 ## Takeaways
-1.
-2.
-3.
+The three major takeaways are about **covid cases, the crime number, and crime types**.
+The trend of the number of covid cases in each county in Washington State has been shown in the first plot. It can be clearly seen that covid-19 has been in Washington state since around February 2020, and there has been a linear increase in cases since then. By January next year, there has been an exponential increase in cases. It can be inferred that the delta variant, which is more infectious, started entering Washington state and became a major contributor to covid cases. The rate of increase slowed down in early February because more and more people are vaccinated and good anti-epidemic measures by local government. Among all the counties, King County has the highest number of covid cases due to its high county population.
 
 ## Insights
 -	Generally speaking, there is a light positive correlation between covid cases and crime numbers. Though this correlation may be caused by the differences in total number of populations.
