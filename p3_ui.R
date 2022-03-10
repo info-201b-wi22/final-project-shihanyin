@@ -85,7 +85,7 @@ plot_3 <- tabPanel(
 conclusion <- tabPanel(
   "Conclusion",
   h4("Takeaways"),
-  p("The three major takeaways are about covid cases, the crime number, and crime types."), 
+  p("The three major takeaways are about covid cases, the crime types, and crime number."), 
   p("The trend of the number of covid cases in each county in Washington State has been shown in 
      the first plot. It can be clearly seen that covid-19 has been in Washington state since around 
      February 2020, and there has been a linear increase in cases since then. By January next year, 
@@ -93,15 +93,25 @@ conclusion <- tabPanel(
      which is more infectious, started entering Washington state and became a major contributor to 
      covid cases. The rate of increase slowed down in early February because more and more people are 
      vaccinated and good anti-epidemic measures by local government. Among all the counties, King 
-     County has the highest number of covid cases due to its high county population."),
+     County has the highest number of covid cases due to its high county population. It reaches 62582 cases."),
+  p("Our analysis has divided crime types into three categories: personal crime, property crime and social crime. 
+    It can be clearly seen from the comparison of the number of crime incidents from 2019-2020 that property crime (+51005) 
+    in Washington State. The personal crime has decreased (-2732), as well as social crime (-5783). However, the results of 
+    overall crime number trend have been surprising. As the county with both the highest number of covid-19 cases and highest 
+    number of crime cases, King County is the subject that we intend to take a closer look at. By comparing the number of 
+    crimes from 2018, 2019 and 2020, the trends show that changes in crime rates seem to be random and irregular. 
+    However, it is worth noting that the crime figures for 2020 are basically smaller than the figures for last tow years. 
+    The highest monthly crime number is 670 in October 2019, while the lowest one is 342 in June 2020."),
                     
   h4("Insights"),
   p("Generally speaking, there is a light positive correlation between covid cases and crime numbers, 
-     though this correlation may be caused by the differences in total number of populations."),
-  p("There are some regions which do not show this positive correlation: they have low covid cases 
-     but relatively high crime numbers, or have high crime numbers but with relatively low covid 
-     cases. Other social factors exist to influence these two variables."),
-  p("The correlation between crime and covid still needs to be further explored."),
+     if only consider a county's covid cases and crime number. However, when taking a closer look at the
+    situation of a county, the crime number seems to show a negative correlation with covid cases."),
+  p("During the pandemic, work/study-from-home policy has forced many residents to stay at home, thereby reducing
+    overall crime. However, the epidemic has also forced many stores to close and some people probably lose their jobs or even
+    live on the streets, which may explain the increased distribution of property crime in Washington state."),
+  p("The correlation between crime and covid is very light and many other factors can exist to influence these two variables.
+    Further exploration is still needed."),
                       
   h4("Implications"),
   p("The seriousness of the pandemic can be served as the degree to measure the effectiveness of the 
