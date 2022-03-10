@@ -7,8 +7,11 @@ library(readr)
 county_cases <- read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")
 wa <- county_cases %>% filter(state == "Washington")
 
-criminal_data_type_copy <- read_csv("criminal_data_type copy.csv")
-personal_crime <- criminal_data_type_copy[c(1:14, 37:50), ]
+#plot2
+criminal_data_type<- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/criminal_data_type.csv?token=GHSAT0AAAAAABQW2MUKKXLPSEX4VDP3TLRMYRSWGNQ")
+personal_crime <- criminal_data_type[c(1:14, 37:50), ]
+property_crime <- criminal_data_type[c(16:27, 52:63), ]
+society_crime <- criminal_data_type[c(29:35, 65:71), ]
 
 server <- function(input, output) {
   
@@ -22,4 +25,22 @@ server <- function(input, output) {
     
     return(plotly_Plot1)
   })
+  
+  output$Plot2 <- renderPrint({ input$radio 
+    if (input$plot_type == "Personal Crime") {
+      ggplot(personal_crime) + 
+        geom_col(aes(x=year, y=Incidents, fill = Offense)) +
+        scale_fill_brewer(palette = 3)
+    } else if (input$plot_type == "Property Crime") {
+      ggplot(property_crime) +
+        geom_col(aes(x=year, y=Incidents, fill = Offense)) +
+        scale_fill_brewer(palette = 3)
+    }
+    else if (input$plot_type == "Society Crime") {
+      ggplot(society_crime) +
+        geom_col(aes(x=year, y=Incidents, fill = Offense)) +
+        scale_fill_brewer(palette = 3)
+    }
+  })
 }
+
