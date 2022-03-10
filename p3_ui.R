@@ -48,7 +48,9 @@ plot_1 <- tabPanel(
 
 # Plot 2
 plot_2 <- tabPanel(
-  "Plot 2", 
+  "Plot 2",
+  h5("Were there differences in crime rates during covid? If so, what kinds?"),
+  sidebarLayout(
     sidebarPanel(
       radioButtons(
         inputId = "plot_type",
@@ -58,8 +60,9 @@ plot_2 <- tabPanel(
       ),
     mainPanel(
       plotlyOutput("Plot2", width = "65%", height = "650px"),
-      p("This chart displays the number of incidents per Crime Type. Switch between categories to see the distribution from 2019 to 2020.")
+      p("This chart displays the number of incidents per Crime Type. Switch between categories to see the distribution from 2019 to 2020. From the graph it is clear to seen that in two of the crime categories there were actually a decrease in crimes (personal and society) but there were an increase of crimes within the property section. While covid may not be a direct reason for this increase, it is still interesting to take not of when considering the different trends.")
     )
+  )
 )
 
 
