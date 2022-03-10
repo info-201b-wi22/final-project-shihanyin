@@ -26,7 +26,7 @@ server <- function(input, output) {
     
     plot1 <- ggplot(wa_counties) + 
       geom_line(mapping = aes(x = date, y = cases, color= county)) +
-      labs(title = "Trend of covid cases for all counties of Washington state.")
+      labs(title = "Trend of covid cases for all counties of Washington state in 2020.")
     
     Plot1 <- ggplotly(plot1)
     

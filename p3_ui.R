@@ -34,7 +34,7 @@ plot_sidebar1 <- sidebarPanel(
 
 plot_main1 <- mainPanel(
   plotlyOutput(outputId = "Plot1" ),
-  p("By looking at this chart, we can get a glance about trend of covid cases among counties in the year of 2020.")
+  p("By looking at this chart, we can get a glance about trend of covid cases among counties in the year of 2020. The major purpose of making this chart is to observe the differences among all those counties in Washington, and it is also a preparation for future analysis on covid and crimes. We need the data regarding covid as well as the trend of covid for differenct counties, so that we can looking into specific county in the later analysis. Basically speaking, this chart is not made to answer a specific questions we are seeking to anwer, but compre this chart with others, we can get an overview about how to address our major questions.")
 )
 
 plot_1 <- tabPanel(
