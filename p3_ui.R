@@ -6,7 +6,8 @@ introdction <- tabPanel(
   "Introduction",
   fluidPage(theme = bs_theme(primary = "#9370DB", font_scale = NULL, bootswatch = "cerulean"),
             h4("Major Questions"),
-            p("...")
+            p("The major question we are seeking to answer is whether there"),
+            
   )
 )
 
@@ -24,7 +25,7 @@ plot_sidebar1 <- sidebarPanel(
 
 plot_main1 <- mainPanel(
   plotlyOutput(outputId = "Plot1" ),
-  p("By looking at this chart, we can get a glance about trend of covid cases among counties.")
+  p("By looking at this chart, we can get a glance about trend of covid cases among counties in the year of 2020.")
 )
 
 plot_1 <- tabPanel(

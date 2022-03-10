@@ -6,7 +6,7 @@ library(readr)
 
 # Plot 1
 county_cases <- read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")
-wa <- county_cases %>% filter(state == "Washington")
+wa <- county_cases %>% filter(state == "Washington") %>% summarise(date, county, cases)
 
 # Plot 2
 criminal_data_type <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/criminal_data_type.csv?token=GHSAT0AAAAAABQW2MUKKXLPSEX4VDP3TLRMYRSWGNQ")
@@ -22,16 +22,15 @@ server <- function(input, output) {
   
   output$Plot1 <- renderPlotly({
     
-    wa <- wa %>% 
-      filter(county %in% input$user_category)
+    wa_counties <- wa %>%  filter(county %in% input$user_category)
     
-    Plot1 <- ggplot(data = wa) + 
-      geom_line(mapping = aes(x = date, y = cases, color = county))
+    plot1 <- ggplot(wa_counties) + 
+      geom_line(mapping = aes(x = date, y = cases, color= county)) +
+      labs(title = "Trend of covid cases for all counties of Washington state.")
     
-    plotly_Plot1 <- ggplotly(Plot1)
+    Plot1 <- ggplotly(plot1)
     
-    return(plotly_Plot1)
-    
+    return(Plot1)
   })
 
   output$Plot2 <- renderPlotly({
