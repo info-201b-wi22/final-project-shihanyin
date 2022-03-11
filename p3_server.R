@@ -2,7 +2,7 @@ library(ggplot2)
 library(plotly)
 library(dplyr)
 library(stringr)
-library(readr)
+
 
 # Plot 1
 county_cases <- read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")
@@ -20,19 +20,23 @@ king_county_total_crimes <- read.csv("https://raw.githubusercontent.com/info-201
 
 server <- function(input, output) {
   
+  # Plot 1
   output$Plot1 <- renderPlotly({
     
     wa_counties <- wa %>%  filter(county %in% input$user_category)
     
     plot1 <- ggplot(wa_counties) + 
       geom_line(mapping = aes(x = date, y = cases, color= county)) +
-      labs(title = "Trend of covid cases for all counties of Washington state in 2020.")
+      labs(title = "Trend of Covid Cases for All Counties in Washington State in 2020")
     
     Plot1 <- ggplotly(plot1)
     
     return(Plot1)
+    
   })
 
+  
+  # Plot 2
   output$Plot2 <- renderPlotly({
     
     if (input$plot_type == 1) {
@@ -53,6 +57,8 @@ server <- function(input, output) {
     
   })
   
+  
+  # Plot 3
   output$Plot3 <- renderPlotly({
     
     king_county_total_crimes <- king_county_total_crimes %>%
@@ -60,7 +66,7 @@ server <- function(input, output) {
     
     plot3 <- ggplot(data = king_county_total_crimes) +
       geom_line(mapping = aes(x = Month, y = Total_Crimes, color = Year)) +
-      geom_point(mapping = aes(x = Month, y = Total_Crimes, color = Year))
+      geom_point(mapping = aes(x = Month, y = Total_Crimes, color = Year)) +
       labs(title = "Total Crimes in King County from 2018 to 2020 by Month",
            x = "Month", y = "Numbers of Crimes",
            color = "Year")
@@ -73,6 +79,7 @@ server <- function(input, output) {
   })
   
   output$Plot3Summary <- renderText({
+    
     return("I found that crimes in Washington state has mostly occurred in King County in the recent years, thus 
            I decided use King County as typical case to analyze. The reason I chose to plot these line chart and 
            scatter plot was line chart can clearly show the trend that total number of crimes change during the 
@@ -80,7 +87,9 @@ server <- function(input, output) {
            of different years. It can be seen from the chart that the total number of crimes in King County in 2020
            does less than that in 2018 and 2019 to some extent, thus we can infer that Covid-19 does have an impact 
            on the total number of crimes in King County.")
+    
   })
+  
 }
 
 
