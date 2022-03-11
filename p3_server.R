@@ -113,11 +113,11 @@ server <- function(input, output) {
     
     if (input$plot_type == 1) {
       ggplot(personal_crime) + 
-        geom_col(aes(x = year, y = Incidents, fill = Offense))+
+        geom_col(aes(x = year, y = Incidents, fill = Offense)) +
         labs(title = "Personal Crime Incidences", subtitle = "2019-2020", x = "Year", y = "Incidents") 
     } else if (input$plot_type == 2) {
       ggplot(property_crime) +
-        geom_col(aes(x = year, y = Incidents, fill = Offense))+
+        geom_col(aes(x = year, y = Incidents, fill = Offense)) +
         labs(title = "Property Crime Incidences", subtitle = "2019-2020", x = "Year", y = "Incidents") 
     }
     else if (input$plot_type == 3) {
