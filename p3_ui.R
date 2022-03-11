@@ -7,7 +7,75 @@ library(bslib)
 
 # Plot 1
 county_cases <- read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")
-wa <- county_cases %>% filter(state == "Washington") %>% summarise(date, county, cases)
+wa <- county_cases %>%
+  filter(state == "Washington") %>%
+  summarise(date, county, cases)
+
+Jan <- wa %>%
+  filter(date == date[date <= "2020-01-31"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+Feb <- wa %>%
+  filter(date == date[date <= "2020-02-30"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+March <- wa %>%
+  filter(date == date[date <= "2020-03-31"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+April <- wa %>%
+  filter(date == date[date <= "2020-04-30"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+May <- wa %>%
+  filter(date == date[date <= "2020-05-31"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+June <- wa %>%
+  filter(date == date[date <= "2020-06-30"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+July <- wa %>%
+  filter(date == date[date <= "2020-07-31"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+Aug <- wa %>%
+  filter(date == date[date <= "2020-08-31"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+Sep <- wa %>%
+  filter(date == date[date <= "2020-09-30"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+Oct <- wa %>%
+  filter(date == date[date <= "2020-10-31"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+Nov <- wa %>%
+  filter(date == date[date <= "2020-11-30"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+Dec <- wa %>%
+  filter(date == date[date <= "2020-12-31"]) %>%
+  group_by(county) %>%
+  filter(date == max(date))
+
+wa <- list(Jan, Feb, March, April, May, June, July, Aug, Sep, Oct, Nov, Dec) %>%
+  reduce(full_join, by=c('date', "cases", "county"))
+
+wa$date <- gsub("2020-", "", wa$date)
+wa$date <- gsub("-.*", "", wa$date)
 
 # Plot 2
 criminal_data_type <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/criminal_data_type.csv?token=GHSAT0AAAAAABQW2MUKKXLPSEX4VDP3TLRMYRSWGNQ")
@@ -17,7 +85,8 @@ society_crime <- criminal_data_type[c(29:35, 65:71), ]
 
 # Plot 3
 king_county_total_crimes <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/crimes_in_King_Country_by_month%20copy.csv?token=GHSAT0AAAAAABQIMKIZSAV6DI3FTMEHASNSYRTDIMQ")
-
+king_county_total_crimes$Year <- as.character(king_county_total_crimes$Year)
+str(king_county_total_crimes)
 
 introdction <- tabPanel(
   
@@ -68,7 +137,7 @@ introdction <- tabPanel(
 plot_sidebar1 <- sidebarPanel(
   
   selectInput(
-    inputId = "user_category",
+    inputId = "county",
     label = h5("Select County: "),
     choices = wa$county,
     selected = "King",
@@ -143,7 +212,7 @@ plot_main3 <- mainPanel(
   
   tabsetPanel(
     tabPanel("Plot", plotlyOutput(outputId = "Plot3"),   
-    p("This chart displays the total number of crimes in King County. 
+    p("This chart displays the trends of crimes in King County. 
     Select years to compare the data from 2018 to 2020.")),
     tabPanel("Summary", textOutput(outputId = "Plot3Summary"))
   )
