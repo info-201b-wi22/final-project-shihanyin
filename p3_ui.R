@@ -3,7 +3,7 @@ library(plotly)
 library(dplyr)
 library(stringr)
 library(bslib)
-
+library(tidyverse)
 
 # Plot 1
 county_cases <- read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")
@@ -93,8 +93,8 @@ introdction <- tabPanel(
   "Introduction",
   fluidPage(theme = bs_theme(primary = "#9370DB", font_scale = NULL, bootswatch = "cerulean"),
            
-             img(src = "https://www.clevelandclinic.org/healthinfo/ShowImage.ashx?PIC=4480", 
-                height = "50%", width = "50%", align = "center"),
+             img(src = "https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/Image.JPG?token=GHSAT0AAAAAABQIMKIYFMVN2WJIXXJDMYOSYRUMQCQ", 
+                height = "30%", width = "100", align = "center"),
             
             h4("Major Questions"),
             p("Since the outbreak of Covid-19, the coronavirus pandemic seems to have brought nothing but 
@@ -159,7 +159,7 @@ plot_main1 <- mainPanel(
 
 plot_1 <- tabPanel(
   
-  "Plot 1",
+  "Covid Cases",
   sidebarLayout(
     plot_sidebar1,
     plot_main1
@@ -171,7 +171,7 @@ plot_1 <- tabPanel(
 # Plot 2
 plot_2 <- tabPanel(
   
-  "Plot 2",
+  "Crime Rates",
   h5("Were there differences in crime rates during covid? If so, what kinds?"),
   
   sidebarLayout(
@@ -221,7 +221,7 @@ plot_main3 <- mainPanel(
 
 plot_3 <- tabPanel(
   
-  "Plot 3",
+  "Crimes in King County",
   sidebarLayout(
     plot_sidebar3,
     plot_main3
