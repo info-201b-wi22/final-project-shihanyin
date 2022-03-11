@@ -93,8 +93,8 @@ introdction <- tabPanel(
   "Introduction",
   fluidPage(theme = bs_theme(primary = "#9370DB", font_scale = NULL, bootswatch = "cerulean"),
            
-             img(src = "https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/Image.JPG?token=GHSAT0AAAAAABQIMKIYFMVN2WJIXXJDMYOSYRUMQCQ", 
-                height = "30%", width = "100", align = "center"),
+             img(src = "https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/Image.JPG?token=GHSAT0AAAAAABQIMKIYZCUPTPWAXR7HWUC2YRUMWGA", 
+                height = "60%", width = "60%", align = "center"),
             
             h4("Major Questions"),
             p("Since the outbreak of Covid-19, the coronavirus pandemic seems to have brought nothing but 
