@@ -78,15 +78,16 @@ wa$date <- gsub("2020-", "", wa$date)
 wa$date <- gsub("-.*", "", wa$date)
 
 # Plot 2
-criminal_data_type <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/criminal_data_type.csv?token=GHSAT0AAAAAABQW2MUKKXLPSEX4VDP3TLRMYRSWGNQ")
+criminal_data_type <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/criminal_data_type.csv?token=GHSAT0AAAAAABQJINNTGY2ZTRUVZ7GVQJASYR4FYAQ")
 personal_crime <- criminal_data_type[c(1:14, 37:50), ]
 property_crime <- criminal_data_type[c(16:27, 52:63), ]
 society_crime <- criminal_data_type[c(29:35, 65:71), ]
 
 # Plot 3
-king_county_total_crimes <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/crimes_in_King_Country_by_month%20copy.csv?token=GHSAT0AAAAAABQIMKIZSAV6DI3FTMEHASNSYRTDIMQ")
+king_county_total_crimes <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-shihanyin/main/crimes_in_King_Country_by_month%20copy.csv?token=GHSAT0AAAAAABQJINNSKBSLYVVOZPVGILN4YR4FXJA")
 king_county_total_crimes$Year <- as.character(king_county_total_crimes$Year)
 str(king_county_total_crimes)
+
 
 introdction <- tabPanel(
   

@@ -5,9 +5,9 @@ account: yinshihan
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5827142
-bundleId: 5668271
+bundleId: 5694529
 url: https://yinshihan.shinyapps.io/final-project-shihanyin/
-when: 1646945315.34173
-lastSyncTime: 1646945315.34173
+when: 1647506798.0098
+lastSyncTime: 1647506798.0098
 asMultiple: FALSE
 asStatic: FALSE
